@@ -2,7 +2,9 @@
 
 export(connect_to_database)
 export(create_graphics)
+export(gets_api)
 export(handle_missing_data)
+export(post_api)
 export(process_data)
 export(read_data)
 export(remove_unnecessary_columns)

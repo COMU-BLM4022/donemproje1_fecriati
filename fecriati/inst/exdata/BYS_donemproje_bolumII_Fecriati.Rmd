@@ -244,3 +244,13 @@ fecriati::create_graphics(data = usersyeni)
 #### Bu grafik kullanıcıların yaş dağılımını göstermektedir.Böylece e-ticaret sitemizin yaş  kitlesini görebilmekteyiz.
 
 
+# Q4 Veri setinin BYS platformuna ithali
+
+## Veri İthalatı
+
+**Users ve order ve order_items** bilgileri için **WooCommerce REST API**, **product** bilgileri için ise WooCommerce ürün sekmesi kullanılarak WooCommerce aracılığıyla ithal edildi.
+
+**R Api Script kodları adresi:**
+
+- `Fecriati/R/Api_operations`
+
