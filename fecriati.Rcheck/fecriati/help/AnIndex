@@ -1,0 +1,10 @@
+connect_to_database	connect_to_database
+create_graphics	create_graphics
+gets_api	gets_api
+handle_missing_data	handle_missing_data
+post_api	post_api
+process_data	process_data
+read_data	read_data
+remove_unnecessary_columns	remove_unnecessary_columns
+save_data	save_data
+summarize_data	summarize_data
