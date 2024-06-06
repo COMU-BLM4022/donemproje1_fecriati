@@ -254,3 +254,22 @@ fecriati::create_graphics(data = usersyeni)
 
 - `Fecriati/R/Api_operations`
 
+# **Q5: Yapılması Planlanan Veri Analizi**
+
+#### **Veri Birleştirme**
+
+İlk adım olarak, *"users.csv"*, *"orders.csv"* ve *"order_items.csv"* verilerini *"user_id"* veya *"order_id"* gibi **benzersiz bir kimlik** ile birleştirerek zengin bir içerik oluşturulacak.
+
+Veri birleştirme işlemi, müşteri bilgileri ile sipariş bilgilerini bir araya getirerek daha **kapsamlı bir veri seti** oluşturmamıza imkan sağlayacak. Bu, müşteri segmentasyonu, kişiselleştirilmiş pazarlama stratejileri ve müşteri sadakati gibi konuları daha iyi anlamanıza yardımcı olabilir.
+
+#### **Müşteri Satın Alma Alışkanlıklarının Analizi**
+
+Müşteri satın alma alışkanlıklarını analiz etmek için, ürün satış verilerini kullanacağız. Hangi ürünlerin en çok satıldığını ve hangi müşteri segmentlerinin hangi ürünleri tercih ettiğini belirlemek için satış verilerini **görselleştirecek** ve analiz edeceğiz.
+
+#### **Coğrafi Konuma Göre Satışların İncelenmesi**
+
+Coğrafi konuma göre satışları incelemek için *"country"* veya *"city"* sütunlarını kullanarak, verileri belirli **kategorilere veya segmentlere** ayıracağız.
+
+Belirlediğimiz kategorilere göre verileri **gruplayarak** analiz edebileceğiz. Örneğin, her bir ülkeye veya şehre göre toplam satış miktarını analiz edeceğiz. Bu analiz sonucunda coğrafi konumun satışlarımız üzerindeki olumsuz etkilerini tespit edip bu soruna çözüm bulabileceğiz.
+
+
