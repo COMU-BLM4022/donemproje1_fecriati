@@ -197,10 +197,6 @@ Bu veri setinde herhangi bir sütun silinmemiştir, eksik olan yerler "NA" değe
 
 
 ```{r, echo=FALSE, warning=FALSE, message=FALSE}
-library(dplyr)
-library(RSQLite)
-library(utils)
-
 
 users_path <- "users.csv"
 users = fecriati::read_data(users_path)
@@ -215,32 +211,33 @@ order_items = fecriati::read_data(order_items_path)
 order_items_yeni <- "order_itemsyeni.csv"
 
 product_path <- "product.csv"
-products = fecriati::read_data(product_path, sep = ",")
+products = fecriati::read_data(product_path)
 product_yeni <- "product_yeni.csv"
 
 
 # Process users data
 cat("Users Data\n")
-usersyeni <- fecriati::process_data(users, users_yeni, remove_cols = c("X","latitude","longitude"))
-
+users <- fecriati::process_data(users, users_yeni, remove_cols = c("X","latitude","longitude"))
+typeof(users)
+users$id
+user_temiz
 # Process orders data
 cat("Orders Data\n")
-ordersyeni <- fecriati::process_data(orders, orders_yeni, remove_cols = c("returned_at", "shipped_at", "delivered_at"))
+orders_temiz <- fecriati::process_data(orders, orders_yeni, remove_cols = c("returned_at", "shipped_at", "delivered_at"))
+
 
 # Process order items data
 cat("Order Items Data\n")
-order_itemsyeni <-  fecriati::process_data(order_items, order_items_yeni, remove_cols = c("returned_at", "shipped_at", "delivered_at", "sale_price"))
 
 # Process product data
 cat("Product Data\n")
- productsyeni <- fecriati::process_data(products, product_yeni, remove_cols = NULL)
 
 # Create graphics
 cat("Graphics\n")
-fecriati::create_graphics(data = usersyeni)
+
+
+db_path <- "Fecriati_Db.sqlite"
+db = fecriati::connect_to_database(db_path = db_path)
 
 ```
-
-#### Bu grafik kullanıcıların yaş dağılımını göstermektedir.Böylece e-ticaret sitemizin yaş  kitlesini görebilmekteyiz.
-
 
