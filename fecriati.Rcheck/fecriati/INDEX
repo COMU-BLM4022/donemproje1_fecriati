@@ -2,8 +2,10 @@ connect_to_database     Veritabanı bağlantısını kurar ve bağlantı
                         nesnesini döndürür
 create_graphics         Grafik oluşturma ve istatistiksel analizler
                         yapma
+gets_api                Api ile veri cekme islemi
 handle_missing_data     Eksik verileri doldurma veya çıkarma
                         işlemlerini yapar
+post_api                Api ile veri yazma islemi
 process_data            Veriyi yükler, eksik verileri işler, gereksiz
                         kolonları kaldırır ve sonuçları kaydeder
 read_data               CSV dosyasını okur ve veriyi işler
