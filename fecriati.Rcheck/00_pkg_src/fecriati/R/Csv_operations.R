@@ -2,31 +2,29 @@
 #'
 #' @param file_path Dosya yolunu belirtir.
 #' @param sep CSV dosyasındaki ayırıcı karakter (varsayılan ";").
+#' @import utils
 #' @return Veri çerçevesi.
 #' @export
 read_data <- function(file_path, sep = ";") {
-  if (requireNamespace("utils", quietly = TRUE)) {
-    # utils kütüphanesini yükle
-    library(utils)
-    # CSV dosyasını oku
-    data <- utils::read.csv(file_path, sep = sep, stringsAsFactors = FALSE)
-
-    return(data)
-  } else {
+  if (!requireNamespace("utils", quietly = TRUE)) {
     stop("utils package is not available.")
   }
+    # utils kütüphanesini yükle
+    # CSV dosyasını oku
+    data <- utils::read.csv(file_path, sep = sep, stringsAsFactors = FALSE)
+    return(data)
 }
 
 #' Eksik verileri doldurma veya çıkarma işlemlerini yapar
 #'
 #' @param data Veri çerçevesi.
 #' @return Düzenlenmiş veri çerçevesi.
+#' @import dplyr
 #' @export
 handle_missing_data <- function(data) {
   if (!requireNamespace("dplyr", quietly = TRUE)) {
     stop("dplyr package is required but not installed.")
   }
-  library(dplyr)
 
   data <- data %>%
     dplyr::mutate(across(where(is.character), ~ ifelse(. == "", NA, .))) %>%
@@ -61,12 +59,13 @@ summarize_data <- function(data) {
 #' @param data Veri çerçevesi.
 #' @param columns Kaldırılacak kolonların isimleri.
 #' @return Düzenlenmiş veri çerçevesi.
+#' @import dplyr
 #' @export
 remove_unnecessary_columns <- function(data, columns) {
   if (!requireNamespace("dplyr", quietly = TRUE)) {
     stop("dplyr package is required but not installed.")
   }
-  library(dplyr)
+
   data <- dplyr::select(data, -dplyr::all_of(columns))
   return(data)
 }
@@ -78,12 +77,12 @@ remove_unnecessary_columns <- function(data, columns) {
 #'
 #' @param data Veri çerçevesi.
 #' @param file_path Kaydedilecek dosyanın yolu.
+#' @import utils
 #' @export
 save_data <- function(data, file_path) {
   if (!requireNamespace("utils", quietly = TRUE)) {
     stop("utils package is required but not installed.")
   }
-  library(utils)
 
   utils::write.csv(data, file_path, row.names = FALSE)
   return(head(data))

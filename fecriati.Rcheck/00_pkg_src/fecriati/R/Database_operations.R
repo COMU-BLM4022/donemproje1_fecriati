@@ -4,6 +4,7 @@
 #'
 #' @param db_path Veritabanı dosyasının yolunu belirtir.
 #' @return Veritabanı bağlantısı nesnesi.
+#' @import RSQLite
 #' @export
 connect_to_database <- function(db_path) {
   if (requireNamespace("RSQLite", quietly = TRUE)) {
