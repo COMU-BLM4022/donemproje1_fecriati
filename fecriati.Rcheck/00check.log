@@ -58,14 +58,60 @@ Use \uxxxx escapes for other characters.
 * checking replacement functions ... OK
 * checking foreign function calls ... OK
 * checking R code for possible problems ... NOTE
+create_final_analysis_graph: no visible global function definition for
+  'ggplot'
+create_final_analysis_graph: no visible global function definition for
+  'aes_string'
+create_final_analysis_graph: no visible global function definition for
+  'geom_bar'
+create_final_analysis_graph: no visible global function definition for
+  'theme_minimal'
+create_final_analysis_graph: no visible global function definition for
+  'labs'
+create_final_analysis_graph: no visible global function definition for
+  'theme'
+create_final_analysis_graph: no visible global function definition for
+  'element_text'
 create_graphics: no visible binding for global variable 'age'
+filter_matched_categories: no visible global function definition for
+  '%>%'
+filter_matched_categories: no visible global function definition for
+  'filter'
+filter_matched_categories: no visible binding for global variable
+  'total_spending'
+filter_matched_categories: no visible global function definition for
+  'select'
+filter_matched_categories: no visible global function definition for
+  'all_of'
+group_by_age_gender: no visible global function definition for '%>%'
+group_by_age_gender: no visible global function definition for 'mutate'
+group_by_age_gender: no visible global function definition for
+  'case_when'
+group_by_and_send_fun: no visible global function definition for '%>%'
+group_by_and_send_fun: no visible global function definition for
+  'group_by'
+group_by_and_send_fun: no visible global function definition for
+  'across'
+group_by_and_send_fun: no visible global function definition for
+  'all_of'
+group_by_and_send_fun: no visible global function definition for
+  'summarise'
+group_by_and_send_fun: no visible binding for global variable '.data'
 handle_missing_data: no visible global function definition for '%>%'
 handle_missing_data: no visible global function definition for 'across'
 handle_missing_data: no visible global function definition for 'where'
+inner_joinle: no visible global function definition for '%>%'
+inner_joinle: no visible global function definition for 'inner_join'
+merge_and_analyze: no visible global function definition for '%>%'
+merge_and_analyze: no visible global function definition for 'filter'
+merge_and_analyze: no visible binding for global variable 'status.x'
 save_data: no visible global function definition for 'head'
 Undefined global functions or variables:
-  %>% across age head where
+  %>% .data across aes_string age all_of case_when element_text filter
+  geom_bar ggplot group_by head inner_join labs mutate select status.x
+  summarise theme theme_minimal total_spending where
 Consider adding
+  importFrom("stats", "filter")
   importFrom("utils", "head")
 to your NAMESPACE file.
 * checking Rd files ... OK
@@ -75,6 +121,22 @@ to your NAMESPACE file.
 * checking for missing documentation entries ... OK
 * checking for code/documentation mismatches ... OK
 * checking Rd \usage sections ... WARNING
+Undocumented arguments in documentation object 'filter_matched_categories'
+  'data1' 'data2'
+Documented arguments not in \usage in documentation object 'filter_matched_categories':
+  'result' 'maxResult'
+
+Undocumented arguments in documentation object 'group_by_and_send_fun'
+  'sending_fun'
+
+Undocumented arguments in documentation object 'inner_joinle'
+  'order_items' 'orders' 'users' 'products'
+Documented arguments not in \usage in documentation object 'inner_joinle':
+  'data' 'columns'
+
+Undocumented arguments in documentation object 'merge_and_analyze'
+  'selectedCols' 'number_of_analysis'
+
 Undocumented arguments in documentation object 'process_data'
   'data'
 Documented arguments not in \usage in documentation object 'process_data':

@@ -200,6 +200,7 @@ Bu veri setinde herhangi bir sütun silinmemiştir, eksik olan yerler "NA" değe
 library(dplyr)
 library(RSQLite)
 library(utils)
+library(ggplot2)
 
 
 users_path <- "users.csv"
@@ -279,4 +280,47 @@ Belirlediğimiz kategorilere göre verileri **gruplayarak** analiz edebileceğiz
 ## Açıklama
 
 Bu bölümde, çalışan platformun nasıl çalıştığını gösteren bir video bulunmaktadır. Video, platformun ana işlevlerini ve kullanıcı arayüzünü detaylı bir şekilde anlatmaktadır.
+
+
+# Final Analizi
+
+Bu bölümde belirlediğimiz analizleri yapacağız. 
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+users <- fecriati::read_data("usersyeni.csv", sep = ",")
+products <- fecriati::read_data("product_yeni.csv", sep = ",")
+orders <- fecriati::read_data("ordersyeni.csv", sep = ",")
+order_items <- fecriati::read_data("order_itemsyeni.csv", sep = ",")
+
+graph1 = fecriati::merge_and_analyze(order_items, orders, users, products, c("id", "age_group", "gender_group"), TRUE)
+graph_city = fecriati::merge_and_analyze(order_items, orders, users, products, c("id", "country", "traffic_source"), FALSE)
+
+
+# Kullanım örnekleri:
+fecriati::create_final_analysis_graph(
+  data = graph1,
+  x = "interaction(age_group, gender_group)",
+  y = "total_spending",
+  fill = "category",
+  title = "Total Spending by Age Group, Gender, and Category",
+  x_label = "Age and Gender Groups",
+  y_label = "Total Spending",
+  fill_label = "Category"
+)
+
+fecriati::create_final_analysis_graph(
+  data = graph_city,
+  x = "country",
+  y = "total_spending",
+  fill = "traffic_source",
+  title = "Minimum Total Spending by Country and Traffic Source",
+  x_label = "Country",
+  y_label = "Total Spending",
+  fill_label = "Traffic Source"
+)
+
+
+```
+
+
 

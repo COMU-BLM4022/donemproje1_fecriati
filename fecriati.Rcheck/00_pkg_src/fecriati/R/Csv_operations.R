@@ -5,16 +5,14 @@
 #' @return Veri çerçevesi.
 #' @export
 read_data <- function(file_path, sep = ";") {
-  if (requireNamespace("utils", quietly = TRUE)) {
-    # utils kütüphanesini yükle
-    library(utils)
-    # CSV dosyasını oku
-    data <- utils::read.csv(file_path, sep = sep, stringsAsFactors = FALSE)
-
-    return(data)
-  } else {
+  if (!requireNamespace("utils", quietly = TRUE)) {
     stop("utils package is not available.")
   }
+  library(utils)
+  # utils kütüphanesini yükle
+  # CSV dosyasını oku
+  data <- utils::read.csv(file_path, sep = sep, stringsAsFactors = FALSE)
+  return(data)
 }
 
 #' Eksik verileri doldurma veya çıkarma işlemlerini yapar
@@ -67,6 +65,7 @@ remove_unnecessary_columns <- function(data, columns) {
     stop("dplyr package is required but not installed.")
   }
   library(dplyr)
+
   data <- dplyr::select(data, -dplyr::all_of(columns))
   return(data)
 }
