@@ -44,14 +44,10 @@ Use \uxxxx escapes for other characters.
 * checking whether the namespace can be unloaded cleanly ... OK
 * checking loading without being on the library search path ... OK
 * checking dependencies in R code ... WARNING
-'::' or ':::' imports not declared from:
-  'RSQLite' 'dplyr' 'ggplot2'
 'library' or 'require' calls not declared from:
-  'RSQLite' 'dplyr' 'ggplot2'
-'loadNamespace' or 'requireNamespace' calls not declared from:
-  'RSQLite' 'dplyr' 'ggplot2'
+  'RSQLite' 'ggplot2'
 'library' or 'require' calls in package code:
-  'RSQLite' 'dplyr' 'ggplot2' 'utils'
+  'RSQLite' 'ggplot2'
   Please use :: or requireNamespace() instead.
   See section 'Suggested packages' in the 'Writing R Extensions' manual.
 * checking S3 generic/method consistency ... OK
@@ -59,15 +55,11 @@ Use \uxxxx escapes for other characters.
 * checking foreign function calls ... OK
 * checking R code for possible problems ... NOTE
 create_graphics: no visible binding for global variable 'age'
-handle_missing_data: no visible global function definition for '%>%'
-handle_missing_data: no visible global function definition for 'across'
-handle_missing_data: no visible global function definition for 'where'
-save_data: no visible global function definition for 'head'
+filter_matched_categories: no visible binding for global variable
+  'total_spending'
+merge_and_analyze: no visible binding for global variable 'status.x'
 Undefined global functions or variables:
-  %>% across age head where
-Consider adding
-  importFrom("utils", "head")
-to your NAMESPACE file.
+  age status.x total_spending
 * checking Rd files ... OK
 * checking Rd metadata ... OK
 * checking Rd line widths ... OK
@@ -75,6 +67,22 @@ to your NAMESPACE file.
 * checking for missing documentation entries ... OK
 * checking for code/documentation mismatches ... OK
 * checking Rd \usage sections ... WARNING
+Undocumented arguments in documentation object 'filter_matched_categories'
+  'data1' 'data2'
+Documented arguments not in \usage in documentation object 'filter_matched_categories':
+  'result' 'maxResult'
+
+Undocumented arguments in documentation object 'group_by_and_send_fun'
+  'sending_fun'
+
+Undocumented arguments in documentation object 'inner_joinle'
+  'order_items' 'orders' 'users' 'products'
+Documented arguments not in \usage in documentation object 'inner_joinle':
+  'data' 'columns'
+
+Undocumented arguments in documentation object 'merge_and_analyze'
+  'selectedCols' 'number_of_analysis'
+
 Undocumented arguments in documentation object 'process_data'
   'data'
 Documented arguments not in \usage in documentation object 'process_data':
