@@ -200,6 +200,10 @@ Bu veri setinde herhangi bir sütun silinmemiştir, eksik olan yerler "NA" değe
 library(dplyr)
 library(RSQLite)
 library(utils)
+<<<<<<< HEAD
+=======
+library(ggplot2)
+>>>>>>> 8577ec7a6521cda1fb7b26b007f293ee4f41e7f3
 
 
 users_path <- "users.csv"
@@ -254,3 +258,75 @@ fecriati::create_graphics(data = usersyeni)
 
 - `Fecriati/R/Api_operations`
 
+<<<<<<< HEAD
+=======
+# **Q5: Yapılması Planlanan Veri Analizi**
+
+#### **Veri Birleştirme**
+
+İlk adım olarak, *"users.csv"*, *"orders.csv"* ve *"order_items.csv"* verilerini *"user_id"* veya *"order_id"* gibi **benzersiz bir kimlik** ile birleştirerek zengin bir içerik oluşturulacak.
+
+Veri birleştirme işlemi, müşteri bilgileri ile sipariş bilgilerini bir araya getirerek daha **kapsamlı bir veri seti** oluşturmamıza imkan sağlayacak. Bu, müşteri segmentasyonu, kişiselleştirilmiş pazarlama stratejileri ve müşteri sadakati gibi konuları daha iyi anlamanıza yardımcı olabilir.
+
+#### **Müşteri Satın Alma Alışkanlıklarının Analizi**
+
+Müşteri satın alma alışkanlıklarını analiz etmek için, ürün satış verilerini kullanacağız. Hangi ürünlerin en çok satıldığını ve hangi müşteri segmentlerinin hangi ürünleri tercih ettiğini belirlemek için satış verilerini **görselleştirecek** ve analiz edeceğiz.
+
+#### **Coğrafi Konuma Göre Satışların İncelenmesi**
+
+Coğrafi konuma göre satışları incelemek için *"country"* veya *"city"* sütunlarını kullanarak, verileri belirli **kategorilere veya segmentlere** ayıracağız.
+
+Belirlediğimiz kategorilere göre verileri **gruplayarak** analiz edebileceğiz. Örneğin, her bir ülkeye veya şehre göre toplam satış miktarını analiz edeceğiz. Bu analiz sonucunda coğrafi konumun satışlarımız üzerindeki olumsuz etkilerini tespit edip bu soruna çözüm bulabileceğiz.
+
+# Q6: Çalışan Platformun Gösterildiği Sesli Anlatımlı Video
+
+**YouTube Linki:** [https://youtu.be/R6jxV_tuwF4](https://youtu.be/R6jxV_tuwF4)
+
+## Açıklama
+
+Bu bölümde, çalışan platformun nasıl çalıştığını gösteren bir video bulunmaktadır. Video, platformun ana işlevlerini ve kullanıcı arayüzünü detaylı bir şekilde anlatmaktadır.
+
+
+# Final Analizi
+
+Bu bölümde belirlediğimiz analizleri yapacağız. 
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+users2 <- fecriati::read_data("usersyeni.csv", sep = ",")
+products2 <- fecriati::read_data("product_yeni.csv", sep = ",")
+orders2 <- fecriati::read_data("ordersyeni.csv", sep = ",")
+order_items2 <- fecriati::read_data("order_itemsyeni.csv", sep = ",")
+
+graph1 = fecriati::merge_and_analyze(order_items2, orders2, users2, products2, c("id", "age_group", "gender_group"), TRUE)
+graph_city = fecriati::merge_and_analyze(order_items2, orders2, users2, products2, c("id", "country", "traffic_source"), FALSE)
+
+
+# Kullanım örnekleri:
+fecriati::create_final_analysis_graph(
+  data = graph1,
+  x = "interaction(age_group, gender_group)",
+  y = "total_spending",
+  fill = "category",
+  title = "Total Spending by Age Group, Gender, and Category",
+  x_label = "Age and Gender Groups",
+  y_label = "Total Spending",
+  fill_label = "Category"
+)
+
+fecriati::create_final_analysis_graph(
+  data = graph_city,
+  x = "country",
+  y = "total_spending",
+  fill = "traffic_source",
+  title = "Minimum Total Spending by Country and Traffic Source",
+  x_label = "Country",
+  y_label = "Total Spending",
+  fill_label = "Traffic Source"
+)
+
+
+```
+
+
+
+>>>>>>> 8577ec7a6521cda1fb7b26b007f293ee4f41e7f3
