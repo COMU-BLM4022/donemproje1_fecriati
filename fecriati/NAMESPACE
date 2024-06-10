@@ -3,10 +3,6 @@
 export(connect_to_database)
 export(create_final_analysis_graph)
 export(create_graphics)
-
-
-
-
 export(filter_matched_categories)
 export(gets_api)
 export(group_by_age_gender)
@@ -14,7 +10,6 @@ export(group_by_and_send_fun)
 export(handle_missing_data)
 export(inner_joinle)
 export(merge_and_analyze)
-
 export(post_api)
 export(process_data)
 export(read_data)
