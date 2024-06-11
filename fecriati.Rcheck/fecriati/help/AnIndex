@@ -1,19 +1,11 @@
-connect_to_database	connect_to_database
 create_final_analysis_graph	create_final_analysis_graph
 create_graphics	create_graphics
-<<<<<<< HEAD
-gets_api	gets_api
-handle_missing_data	handle_missing_data
-=======
 filter_matched_categories	filter_matched_categories
-gets_api	gets_api
 group_by_age_gender	group_by_age_gender
 group_by_and_send_fun	group_by_and_send_fun
 handle_missing_data	handle_missing_data
 inner_joinle	inner_joinle
 merge_and_analyze	merge_and_analyze
->>>>>>> 8577ec7a6521cda1fb7b26b007f293ee4f41e7f3
-post_api	post_api
 process_data	process_data
 read_data	read_data
 remove_unnecessary_columns	remove_unnecessary_columns

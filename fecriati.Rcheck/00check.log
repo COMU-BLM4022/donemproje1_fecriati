@@ -1,4 +1,4 @@
-* using log directory 'C:/Users/Mustafa/Documents/GitHub/donemproje1_fecriati_fork/fecriati.Rcheck'
+* using log directory 'C:/Users/Mustafa/Documents/GitHub/RSpotifyClone/donemproje1_fecriati_fork/fecriati.Rcheck'
 * using R version 4.3.3 (2024-02-29 ucrt)
 * using platform: x86_64-w64-mingw32 (64-bit)
 * R was compiled by
@@ -44,12 +44,12 @@ Use \uxxxx escapes for other characters.
 * checking whether the namespace can be unloaded cleanly ... OK
 * checking loading without being on the library search path ... OK
 * checking dependencies in R code ... WARNING
-'library' or 'require' calls not declared from:
-  'RSQLite' 'ggplot2'
-'library' or 'require' calls in package code:
-  'RSQLite' 'ggplot2'
+'library' or 'require' call not declared from: 'ggplot2'
+'library' or 'require' call to 'ggplot2' in package code.
   Please use :: or requireNamespace() instead.
   See section 'Suggested packages' in the 'Writing R Extensions' manual.
+Namespace in Imports field not imported from: 'RSQLite'
+  All declared Imports should be used.
 * checking S3 generic/method consistency ... OK
 * checking replacement functions ... OK
 * checking foreign function calls ... OK
