@@ -16,7 +16,7 @@ output:
     df_print: paged
 ---
 
-## Q1 İş Problemi
+<span style="color: darkblue; font-size: 36px;">Q1 İş Problemi</span>
 
 **E-ticaret sektöründe faaliyet gösteren FECR-I ATI firması**, müşteri memnuniyetini artırmak ve satışları maksimize etmek amacıyla iş süreçlerini ve pazarlama stratejilerini optimize etmek istemektedir. Bu bağlamda, **WordPress** platformunu kullanarak veri analizleri ve müşteri etkileşimleri üzerinden kişiselleştirilmiş pazarlama stratejileri geliştirilecektir.
 
@@ -39,7 +39,8 @@ Projemizde, içerik yönetim sistemi olarak **WordPress** kullanılmaktadır. Wo
 - **Veri İthalatı**: Müşteri ve sipariş bilgileri için **WooCommerce REST API**, ürün bilgileri için ise WooCommerce Ürün sekmesi kullanılarak WooCommerce aracılığıyla ithal edilecektir. Verilerin doğru şekilde aktarıldığı test edildikten sonra analiz süreci başlayacaktır.
 - **Verilerin Çekilmesi**: **WooCommerce REST API** kullanılarak ürün, sipariş ve müşteri verileri  çekilecektir. Bu API, verilerin programlı şekilde yönetilmesine ve diğer uygulamalarla entegrasyonuna imkan tanır.
 
-# Q2 İş Problemi Çözmede Kullanılacak Data Seti
+
+<span style="color: darkblue; font-size: 36px;">Q2 İş Problemi Çözmede Kullanılacak Data Seti</span>
 
 Kaynak: [Bigquery Dataset](https://www.kaggle.com/datasets/mustafakeser4/looker-ecommerce-bigquery-dataset)
 
@@ -157,7 +158,8 @@ Veri seti şu sütunlardan oluşmaktadır:
 Bu veri setinde herhangi bir sütun silinmemiştir, eksik olan yerler "NA" değeri ile doldurulmuştur.
 
 
-# Q3 Veri seti keşifsel analizi
+
+<span style="color: darkblue; font-size: 36px;">Q3 Veri seti keşifsel analizi</span>
 
 #### Kütüphaneleri Yükleme:
 
@@ -245,7 +247,8 @@ fecriati::create_graphics(data = usersyeni)
 #### Bu grafik kullanıcıların yaş dağılımını göstermektedir.Böylece e-ticaret sitemizin yaş  kitlesini görebilmekteyiz.
 
 
-# Q4 Veri setinin BYS platformuna ithali
+
+<span style="color: darkblue; font-size: 36px;">Q4 Veri setinin BYS platformuna ithali</span>
 
 ## Veri İthalatı
 
@@ -255,7 +258,8 @@ fecriati::create_graphics(data = usersyeni)
 
 - `Fecriati/R/Api_operations`
 
-# **Q5: Yapılması Planlanan Veri Analizi**
+
+<span style="color: darkblue; font-size: 36px;">Q5: Yapılması Planlanan Veri Analizi</span>
 
 #### **Veri Birleştirme**
 
@@ -273,7 +277,7 @@ Coğrafi konuma göre satışları incelemek için *"country"* veya *"city"* sü
 
 Belirlediğimiz kategorilere göre verileri **gruplayarak** analiz edebileceğiz. Örneğin, her bir ülkeye veya şehre göre toplam satış miktarını analiz edeceğiz. Bu analiz sonucunda coğrafi konumun satışlarımız üzerindeki olumsuz etkilerini tespit edip bu soruna çözüm bulabileceğiz.
 
-# Q6: Çalışan Platformun Gösterildiği Sesli Anlatımlı Video
+<span style="color: darkblue; font-size: 36px;">Q6: Çalışan Platformun Gösterildiği Sesli Anlatımlı Video</span>
 
 **YouTube Linki:** [https://youtu.be/R6jxV_tuwF4](https://youtu.be/R6jxV_tuwF4)
 
@@ -282,7 +286,7 @@ Belirlediğimiz kategorilere göre verileri **gruplayarak** analiz edebileceğiz
 Bu bölümde, çalışan platformun nasıl çalıştığını gösteren bir video bulunmaktadır. Video, platformun ana işlevlerini ve kullanıcı arayüzünü detaylı bir şekilde anlatmaktadır.
 
 
-# Final Analizi
+<span style="color: darkblue; font-size: 36px;">Q7: Final Analizi</span>
 
 Bu bölümde belirlediğimiz analizleri yapacağız. 
 
@@ -295,8 +299,8 @@ order_items <- fecriati::read_data("order_itemsyeni.csv", sep = ",")
 graph1 = fecriati::merge_and_analyze(order_items, orders, users, products, c("id", "age_group", "gender_group"), TRUE)
 graph_city = fecriati::merge_and_analyze(order_items, orders, users, products, c("id", "country", "traffic_source"), FALSE)
 
+cat("Bu analizde, kullanıcıları yaş ve cinsiyete göre gruplandırarak her grubun en çok alışveriş yaptığı kategoriyi ve bu kategoride toplam harcadıkları tutarı belirledik. Analiz sonucunda, farklı yaş ve cinsiyetteki kullanıcılarımızın hangi kategorileri en çok tercih ettiğini tespit ettik. Bu bilgiler, pazarlama ve ürün geliştirme stratejilerinin iyileştirilmesi için kullanılabilir. Bu kapsamlı analiz sayesinde, hedef kitlelerinizi daha iyi anlayarak onlara özel kampanyalar ve ürünler sunabilirsiniz.\n")
 
-# Kullanım örnekleri:
 fecriati::create_final_analysis_graph(
   data = graph1,
   x = "interaction(age_group, gender_group)",
@@ -307,6 +311,8 @@ fecriati::create_final_analysis_graph(
   y_label = "Total Spending",
   fill_label = "Category"
 )
+
+cat("Bu analizde, kullanıcıların hangi yöntemle alışveriş yaptığını tespit ederek, bu yöntemle yapılan harcamaları belirledik. Analiz sonucunda, ilgili ülkelerdeki alışveriş yöntemlerinden hangisinin en az tercih edildiğini belirleyerek, bu yöntem üzerinden reklamlarımızı arttırmayı hedeflemekteyiz. Bu kapsamlı analiz sayesinde, pazarlama stratejilerinizi optimize ederek hedef kitlelere daha etkili bir şekilde ulaşabilirsiniz.\n")
 
 fecriati::create_final_analysis_graph(
   data = graph_city,
