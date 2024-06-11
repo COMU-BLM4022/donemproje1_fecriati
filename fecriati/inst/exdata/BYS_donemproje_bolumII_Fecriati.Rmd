@@ -284,7 +284,7 @@ Bu bölümde, çalışan platformun nasıl çalıştığını gösteren bir vide
 
 <span style="color: darkblue; font-size: 36px;">Q7: Final Analizi</span>
 
-Bu bölümde belirlediğimiz analizleri yapacağız. 
+Bu bölümde belirlediğimiz analizleri yapacağız. Verilerimizi WooCommerce API ile çektik. Analiz yaparken knit dosyasının hata vermemesi için verilerimizi csv dosyalarından okuduk. API işlemleri R/ApiOperations dosyasında mevcuttur.
 
 ```{r, echo=FALSE, warning=FALSE, message=FALSE}
 users <- fecriati::read_data("usersyeni.csv", sep = ",")
