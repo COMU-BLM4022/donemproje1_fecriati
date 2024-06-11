@@ -18,11 +18,17 @@ get_orders <- function(auth) {
   status <- status_code(response)
 
   if (status == 200) {
-    return(fromJSON(content(response, as = "text")))
+    # Convert JSON response to a list
+    order_list <- fromJSON(content(response, as = "text"))
+
+    # Listeyi dataframe'e donustur
+    order_df <- as.data.frame(order_list)
+    return(order_df)
   } else {
     error <- content(response)
     return(error)
   }
+
 }
 
 # Gelen dataları CSV formatına kaydeden fonksiyon
@@ -33,3 +39,5 @@ save_to_csv <- function(data, file_name) {
 # Get orders
 orders <- get_orders(auth)
 save_to_csv(orders, "orders.csv")
+
+

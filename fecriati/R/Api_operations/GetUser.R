@@ -18,7 +18,12 @@ get_customers <- function(auth) {
   status <- status_code(response)
 
   if (status == 200) {
-    return(fromJSON(content(response, as = "text")))
+    # Convert JSON response to a list
+    user_list <-fromJSON(content(response, as = "text"))
+
+    # Listeyi dataframe'e donustur
+    user_df <- as.data.frame(user_list)
+    return(user_df)
   } else {
     error <- content(response)
     return(error)

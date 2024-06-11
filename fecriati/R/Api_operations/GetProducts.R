@@ -18,7 +18,13 @@ get_products <- function(auth) {
   status <- status_code(response)
 
   if (status == 200) {
-    return(fromJSON(content(response, as = "text")))
+    # Convert JSON response to a list
+    products_list <-fromJSON(content(response, as = "text"))
+
+    # Listeyi dataframe'e donustur
+    product_df <- as.data.frame(products_list)
+    return(product_df)
+
   } else {
     error <- content(response)
     return(error)
