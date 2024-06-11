@@ -165,10 +165,6 @@ Bu veri setinde herhangi bir sütun silinmemiştir, eksik olan yerler "NA" değe
 
 - `tidyverse`, `magrittr`, ve `dplyr` kütüphaneleri yüklenir. Bu kütüphaneler veri manipülasyonu ve analizi için kullanılır.
 
-#### Veritabanı Bağlantısını Kurma:
-
-- `connect_to_database` fonksiyonu, veritabanı dosyasının yolunu alır ve bağlantı nesnesini döndürür. Bu fonksiyon `RSQLite` kütüphanesini kullanır.
-
 #### CSV Dosyasını Yükleme:
 
 - `load_data` fonksiyonu, CSV dosyasının yolunu ve ayırıcı karakteri alır ve veri çerçevesini döndürür. Bu fonksiyon `read.csv` fonksiyonunu kullanır.

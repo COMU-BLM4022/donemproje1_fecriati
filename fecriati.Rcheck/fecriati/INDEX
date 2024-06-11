@@ -1,18 +1,10 @@
-connect_to_database     Veritabanı bağlantısını kurar ve bağlantı
-                        nesnesini döndürür
 create_final_analysis_graph
                         Final analizimiz için bar grafik oluşturma
 create_graphics         Grafik oluşturma ve istatistiksel analizler
                         yapma
-<<<<<<< HEAD
-gets_api                Api ile veri cekme islemi
-handle_missing_data     Eksik verileri doldurma veya çıkarma
-                        işlemlerini yapar
-=======
 filter_matched_categories
                         Filter matched categories based on total
                         spending
-gets_api                Api ile veri cekme islemi
 group_by_age_gender     Kullanıcıları yaş ve cinsiyete göre
                         gruplandırma
 group_by_and_send_fun   Aynı kombinasyona sahip satırların fiyatlarını
@@ -22,8 +14,6 @@ handle_missing_data     Eksik verileri doldurma veya çıkarma
 inner_joinle            Inner join islemi yapar, veri çerçevesi
                         döndürür
 merge_and_analyze       Verileri birleştirir ve analiz yapar
->>>>>>> 8577ec7a6521cda1fb7b26b007f293ee4f41e7f3
-post_api                Api ile veri yazma islemi
 process_data            Veriyi yükler, eksik verileri işler, gereksiz
                         kolonları kaldırır ve sonuçları kaydeder
 read_data               CSV dosyasını okur ve veriyi işler
